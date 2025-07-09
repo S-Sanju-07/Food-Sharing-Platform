@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Food Donation</title>
+  <link rel="stylesheet" href="donate.css">
+  <link rel="stylesheet" href="stylee.css">
+  
+  <link rel="icon" href="IMAGES/DONATO LOGO.jpg">
+  <style>
+    /* General Page Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: white;
+      color: black;
+      margin: 0;
+      
+      
+    }
+
+    /* Search Container */
+    .search-container {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .search-container input {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      border: 2px solid black;
+    }
+
+    .search-container button {
+      padding: 10px 15px;
+      background: #1a5777;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .search-container button:hover {
+      background: #1a5777;
+    }
+
+    /* Results Container */
+    #results {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    /* Modern Card (Glassmorphism) */
+    .box {
+      background: rgba(219, 216, 216, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      width: 280px;
+      border-radius: 12px;
+      text-align: left;
+      position: relative;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: 0.3s ease-in-out;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Time Left Display (Tag Style) */
+    .time-display {
+      position: absolute;
+      top: 10px;
+      left: 40%;
+      background: rgba(255, 0, 0, 0.8);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* Food Status */
+    .status-display {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* Links */
+    a {
+      color: #ff7b00;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    <!-- Top Header with Contact Info -->
+    <div class="top-header">
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i> Donato@gmail.com
+            <i class="fas fa-phone-alt"></i> 9791366139 , 6379341112
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="IMAGES/DONATO LOGO.jpg" alt="Donato">
+        
+        </div>
+
+        <div class="main-title" style="color: black;">
+            <h1>AI-POWERED FOOD SHARING
+                FOR ORPHAN HOMES </h1>
+        </div>
+
+        <div class="buttons">
+            <button class="donate"><i class="fas fa-heart"></i> <a href="donatemoney.html" style="text-decoration: none; color: white;">Donate</button>
+            <button class="location"><i class="fas fa-map-marker-alt"></i> See Our Location</button>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-bar">
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="in.html">Home</a></li>
+                <li><a href="donate.html">Donate Food</a></li>
+                <li><a href="find_food.html">Find Food</a></li>
+                <li><a href="donatemoney.html">Donate</a></li>
+                <li><a href="cylinder.html">Book cylinder</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><i class="fas fa-search"></i></li>
+            </ul>
+        </nav>
+    </nav><br><br><br><br><br><br><br><br>
+  <h1>Find Food Donation</h1>
+  <div class="search-container">
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button id="searchBtn">Search</button>
+  </div>
+  <div id="results"></div> 
+  <!-- Chatbot UI -->
+ <div class="chatbot-container">
+    <div class="chatbot-icon-container">
+        <div class="chatbot-message" id="chatbotMessage">
+            Need help? Ask me!
+        </div>
+        <img class="rounded-circle shadow" src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" 
+            alt="Chatbot Icon" id="chatbotIcon">
+    </div>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chat-header">
+            Virtual Assistant
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message"><strong>Chatbot:</strong> Hi! How can I assist you?</div>
+            <div class="button-group">
+                <button onclick="sendMessage('How to donate food')">How to donate Food</button>
+                <button onclick="sendMessage('how to find food')">How to find food</button>
+                <button onclick="sendMessage('How to donate money')">How to donate Food</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #f8f9fa;
+    }
+
+    /* Floating Chatbot Button */
+    .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .chatbot-icon-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .chatbot-icon-container:hover {
+        transform: scale(1.1);
+    }
+
+    .chatbot-message {
+        background: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 10px;
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+        margin-right: 10px;
+    }
+
+    .rounded-circle {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+
+    /* Chatbot Window */
+    .chatbot-window {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 350px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .chat-header {
+        background:#1a5777;
+        color: white;
+        padding: 12px;
+        text-align: center;
+        font-weight: bold;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .chat-body {
+        padding: 15px;
+        height: 280px;
+        overflow-y: auto;
+        background: #f1f1f1;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .message {
+        margin: 8px 0;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-message {
+        background:#1a5777;
+        color: white;
+        text-align: right;
+    }
+
+    .typing {
+        font-style: italic;
+        color: gray;
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .button-group button {
+        padding: 10px;
+        background:#1a5777;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .button-group button:hover {
+        background: #0056b3;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+
+<script>
+    let chatbotIcon = document.getElementById("chatbotIcon");
+    let chatbotWindow = document.getElementById("chatbotWindow");
+    let chatBody = document.getElementById("chatBody");
+
+    chatbotIcon.onclick = function () {
+        chatbotWindow.style.display = chatbotWindow.style.display === "flex" ? "none" : "flex";
+    };
+
+    function sendMessage(userInput) {
+        let chatBody = document.getElementById("chatBody");
+
+        // Display user message
+        chatBody.innerHTML += `<div class="message user-message"><strong>You:</strong> ${userInput}</div>`;
+
+        // Fetch response from Flask backend
+        fetch("http://127.0.0.1:5001/chat", {  // Ensure this matches your Flask server URL
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userInput })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Server Error: " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            chatBody.innerHTML += `<div class="message"><strong>Chatbot:</strong> ${data.response}</div>`;
+        })
+        .catch(error => {
+            console.error("Fetch Error:", error);
+            chatBody.innerHTML += `<div class="message error-message"><strong>Chatbot:</strong> Error: Unable to connect to the server.</div>`;
+        });
+    }
+</script>
+<br><br>
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Left: Logo and Tagline -->
+        <div class="footer-section footer-logo">
+            <img src="IMAGES/DONATO LOGO.jpg" alt="DONATO Logo">
+            <p>Connecting Hearts, Sharing Food</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="footer-section">
+            <h4>Useful Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">Be a Volunteer</a></li>
+                <li><a href="#">Donate Now</a></li>
+                <li><a href="#">Success Stories</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section footer-contact">
+            <h4>Keep in Touch</h4>
+            <p><strong>Office Address:</strong> KSR College, Tamil Nadu</p>
+            <p><strong>Phone:</strong> 9791366139</p>
+            <p><strong>Email:</strong> donato@gmail.com</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-section">
+            <h4>Subscribe our Newsletter</h4>
+            <div class="newsletter">
+                <input type="email" placeholder="Enter Your Email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        © 2025 All rights reserved | Designed by AI Mavericks
+    </div>
+</footer>
+
+  <script>
+    // Returns expiry duration (in hours) based on the food item.
+    function getExpiryDuration(foodItem) {
+      foodItem = foodItem.toLowerCase();
+      if (foodItem.includes("idly")) {
+        return 6;
+      } else if (foodItem.includes("rice")) {
+        return 6;
+      } else if (foodItem.includes("dosa")) {
+        return 3;
+      } else {
+        return 3;
+      }
+    }
+
+    // Updates the countdown timer and food status.
+    function updateCountdown(countdownElement, statusElement, expiryTime) {
+      const now = new Date();
+      const diff = expiryTime - now; // Difference in milliseconds
+
+      if (diff <= 0) {
+        countdownElement.textContent = "Time Left: 0h 0m 0s";
+        statusElement.textContent = "Food Status: Expired";
+        statusElement.style.color = "red";
+        return false;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      countdownElement.textContent = `Time Left: ${hours}h ${minutes}m ${seconds}s`;
+      statusElement.textContent = "Food Status: Good";
+      statusElement.style.color = "green";
+      return true;
+    }
+
+    // Starts the countdown interval.
+    function startCountdown(countdownElement, statusElement, expiryTime) {
+      updateCountdown(countdownElement, statusElement, expiryTime);
+      const interval = setInterval(() => {
+        const running = updateCountdown(countdownElement, statusElement, expiryTime);
+        if (!running) {
+          clearInterval(interval);
+        }
+      }, 1000);
+    }
+
+    // Renders the donations on the page.
+    function renderDonations(data) {
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
+      if (data.error) {
+        resultsDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+        return;
+      }
+      if (data.length === 0) {
+        resultsDiv.innerHTML = '<p>No donations found.</p>';
+        return;
+      }
+      data.forEach(item => {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.innerHTML = `
+          <div class="time-display">Time Left:</div><br><br>
+          <h3>${item.name || 'Donor'}</h3><br>
+          <p><strong>Food:</strong> ${item.foodItem || 'Not specified'}</p>
+          <p><strong>Address:</strong> ${item.address || 'Not specified'}</p>
+          <p><strong>Contact:</strong> ${item.mobile || 'Not specified'}</p>
+          <p><strong>Prepared:</strong> ${item.preparedTime || 'Not specified'}</p>
+          <div class="status-display">Food Status: Calculating...</div>
+        `;
+        resultsDiv.appendChild(box);
+        const timeDisplay = box.querySelector('.time-display');
+        const statusDisplay = box.querySelector('.status-display');
+        const preparedTime = new Date(item.preparedTime);
+        const durationHours = getExpiryDuration(item.foodItem || '');
+        const expiryTime = new Date(preparedTime.getTime() + durationHours * 3600 * 1000);
+        startCountdown(timeDisplay, statusDisplay, expiryTime);
+      });
+    }
+
+    // Loads donations from the backend. If a city is provided, filters by that city.
+    function loadDonations(city) {
+      let url = 'http://localhost:5000/find_food';
+      if (city && city.trim() !== '') {
+        url += `?city=${encodeURIComponent(city.trim())}`;
+      }
+      fetch(url)
+        .then(response => response.json())
+        .then(data => renderDonations(data))
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+    // Load donations when search button is clicked.
+    document.getElementById('searchBtn').addEventListener('click', function() {
+      const city = document.getElementById('cityInput').value;
+      loadDonations(city);
+    });
+
+    // Load all donations on initial page load.
+    window.addEventListener('DOMContentLoaded', () => {
+      loadDonations('');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="IMAGES/DONATO LOGO.jpg">
+    <title>UPI Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .qr-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        .header {
+            background-color: #ff8400;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px 8px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="width: 500px;">
+        <h3>Annai Charitable & Educational trust</h3>
+        <center>
+        <div class="header">DONATION SITE</div></center>
+        
+        <p>Fresh nutritious and healthy meals are cooked and served for orphan homes</p>
+        
+        <div class="options">
+            <label><input type="radio" name="occasion" id="birthday" checked> Birthday</label>
+            <label><input type="radio" name="occasion" id="wedding"> Wedding Anniversary</label>
+            <label><input type="radio" name="occasion" id="memory"> Memory</label>
+            <label><input type="radio" name="occasion" id="other"> Other</label>
+        </div>
+        <center>
+        <form id="upiForm" class="options" style="width: 400px;">
+        
+            <label style="display: none;">Recipient UPI ID:</label>
+            <input type="text" value="780695600@ybl" disabled style="display: none;">
+            <input type="date" id="occasion-date" required placeholder="Occasion Date *">
+            <input type="text" id="name" placeholder="Name">
+            <input type="number" id="number" placeholder="Phone number">
+            <input type="text" id="text" placeholder="Address">
+
+            <label>Enter Amount (₹):</label>
+            <input type="number" id="amount" placeholder="Enter amount" required>
+
+            <label style="display: none;">Your UPI ID:</label>
+            <input type="text" value="@" id="yourUpiId" placeholder="Enter your UPI ID" disabled style="display: none;"><br><br>
+
+            <button type="submit">Generate QR Code</button>
+        </form></center>
+
+        <div class="qr-container" id="qrContainer" style="display: none;">
+            <h3>Scan this QR to Pay</h3>
+            <img id="upiQRCode" src="" alt="UPI QR Code" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("upiForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let amount = document.getElementById("amount").value;
+            let upiID = document.getElementById("yourUpiId").value;
+
+            if (amount <= 0 || !upiID) {
+                alert("Please enter a valid amount and UPI ID.");
+                return;
+            }
+
+            // Generate UPI QR Code
+            let upiLink = `upi://pay?pa=780695600@ybl&pn=Recipient&am=${amount}&cu=INR&tid=12345&tn=Payment&mc=1234&url=`;
+
+            // URL encode the UPI link for QR generation
+            let qrLink = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(upiLink)}&size=200x200`;
+
+            // Show the QR code and hide the form
+            document.getElementById("qrContainer").style.display = "block";
+            document.getElementById("upiQRCode").src = qrLink;
+        });
+    </script>
+
+</body>
+</html>

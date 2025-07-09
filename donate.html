@@ -1,0 +1,416 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Donation Platform</title>
+    
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="stylee.css">
+    
+    <link rel="icon" href="IMAGES/DONATO LOGO.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #94664a, #dcb6a6);
+            color: white;
+        }
+        .header {
+            background: linear-gradient(to right,  #dcb6a6,#1d1008);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header span {
+            color: yellow;
+        }
+        .contact {
+            font-size: 18px;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            
+            padding: 50px;
+        }
+        .content {
+            max-width: 90%;
+        }
+        .content h2 {
+            font-size: 36px;
+        }
+        .content span {
+            color: yellow;
+        }
+        .donate-box {
+            background: linear-gradient(45deg,#1a5777, #bfe3d8);
+            padding: 20px;
+            margin-left: 7%;
+            color: black;
+            
+            width: 400px;
+        }
+        .donate-box input, .donate-box select {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            border: none;
+            border-radius: 3px;
+        }
+        .donate-box button {
+            width: 50%;
+            padding: 10px;
+            background: rgb(114, 240, 92);
+            color: rgb(249, 238, 238);
+            border-radius: 10%;
+            font-weight: bolder;
+            border: none;
+            cursor: pointer;
+            
+            font-size: 16px;
+        }
+        
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif;">
+    <!-- Top Header with Contact Info -->
+    <div class="top-header">
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i> Donato@gmail.com
+            <i class="fas fa-phone-alt"></i> 9791366139 , 6379341112
+        </div>
+        <div class="social-icons">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="logo">
+            <img src="IMAGES/DONATO LOGO.jpg" alt="Donato">
+        
+        </div>
+
+        <div class="main-title" style="color: black;">
+            <h1>AI-POWERED FOOD SHARING
+                FOR ORPHAN HOMES </h1>
+        </div>
+
+        <div class="buttons">
+            <button class="donate"><i class="fas fa-heart"></i> <a href="donatemoney.html" style="text-decoration: none; color: white;">Donate</button>
+            <button class="location"><i class="fas fa-map-marker-alt"></i> See Our Location</button>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="in.html">Home</a></li>
+            <li><a href="donate.html">Donate Food</a></li>
+            <li><a href="find_food.html">Find Food</a></li>
+            <li><a href="donatemoney.html">Donate</a></li>
+            <li><a href="cylinder.html">Book cylinder</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><i class="fas fa-search"></i></li>
+        </ul>
+    </nav><br><br><br><br><br><br>
+<div class="header">
+    <h1>EASY <span>DONATION</span></h1>
+    <div class="contact">📞 Call Us Today +1(888) 456-7890</div>
+</div>
+<div class="container" style="background: url('./img/donate.jpg') no-repeat center/cover;">
+    <div class="content" style="margin-left: 30%;">
+        <h2>We Need Your Support To <span><br>FEED THE FOOD</span></h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    <div class="donate-box">
+        <h3>DONATE NOW</h3>
+        <form id="donateForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+    
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" required>
+    
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+    
+            <label for="foodItem">Food Item:</label>
+            <select id="foodItem" onchange="toggleOtherInput()">
+                <option value="idly">Idly</option>
+                <option value="dosa">Dosa</option>
+                <option value="rice">Rice</option>
+                <option value="sambar">Sambar</option>
+                <option value="Others">Others</option>
+            </select>
+    
+            <!-- Hidden input field for "Others" -->
+            <input type="text" id="otherFood" placeholder="Specify Other Food Item" style="display: none; margin-top: 10px;">
+    
+            <label for="preparedTime">Food Prepared Time:</label>
+            <input type="datetime-local" id="preparedTime" required>
+    
+            <label for="eventProof">Event Proof (Upload Image):</label>
+            <input type="file" id="eventProof" accept="image/*" required>
+    
+            <button type="submit">Donate</button>
+        </form>
+        <p id="message"></p>
+    </div>
+</div>
+<!-- Chatbot UI -->
+<div class="chatbot-container">
+    <div class="chatbot-icon-container">
+        <div class="chatbot-message" id="chatbotMessage">
+            Need help? Ask me!
+        </div>
+        <img class="rounded-circle shadow" src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" 
+            alt="Chatbot Icon" id="chatbotIcon">
+    </div>
+
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chat-header">
+            Virtual Assistant
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message"><strong>Chatbot:</strong> Hi! How can I assist you?</div>
+            <div class="button-group">
+                <button onclick="sendMessage('How to donate food')">How to donate Food</button>
+                <button onclick="sendMessage('how to find food')">How to find food</button>
+                <button onclick="sendMessage('How to donate money')">How to donate Food</button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #f8f9fa;
+    }
+
+    /* Floating Chatbot Button */
+    .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .chatbot-icon-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .chatbot-icon-container:hover {
+        transform: scale(1.1);
+    }
+
+    .chatbot-message {
+        background: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 10px;
+        display: none;
+        animation: fadeIn 0.5s ease-in-out;
+        margin-right: 10px;
+    }
+
+    .rounded-circle {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+
+    /* Chatbot Window */
+    .chatbot-window {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 350px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        animation: slideIn 0.3s ease-in-out;
+    }
+
+    .chat-header {
+        background:#1a5777;
+        color: white;
+        padding: 12px;
+        text-align: center;
+        font-weight: bold;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .chat-body {
+        padding: 15px;
+        height: 280px;
+        overflow-y: auto;
+        background: #f1f1f1;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .message {
+        margin: 8px 0;
+        padding: 10px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-message {
+        background:#1a5777;
+        color: white;
+        text-align: right;
+    }
+
+    .typing {
+        font-style: italic;
+        color: gray;
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .button-group button {
+        padding: 10px;
+        background:#1a5777;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .button-group button:hover {
+        background: #0056b3;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+
+<script>
+    let chatbotIcon = document.getElementById("chatbotIcon");
+    let chatbotWindow = document.getElementById("chatbotWindow");
+    let chatBody = document.getElementById("chatBody");
+
+    chatbotIcon.onclick = function () {
+        chatbotWindow.style.display = chatbotWindow.style.display === "flex" ? "none" : "flex";
+    };
+
+    function sendMessage(userInput) {
+        let chatBody = document.getElementById("chatBody");
+
+        // Display user message
+        chatBody.innerHTML += `<div class="message user-message"><strong>You:</strong> ${userInput}</div>`;
+
+        // Fetch response from Flask backend
+        fetch("http://127.0.0.1:5001/chat", {  // Ensure this matches your Flask server URL
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userInput })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Server Error: " + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            chatBody.innerHTML += `<div class="message"><strong>Chatbot:</strong> ${data.response}</div>`;
+        })
+        .catch(error => {
+            console.error("Fetch Error:", error);
+            chatBody.innerHTML += `<div class="message error-message"><strong>Chatbot:</strong> Error: Unable to connect to the server.</div>`;
+        });
+    }
+</script>
+<br>
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Left: Logo and Tagline -->
+        <div class="footer-section footer-logo">
+            <img src="IMAGES/DONATO LOGO.jpg" alt="DONATO Logo">
+            <p>Connecting Hearts, Sharing Food</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="footer-section">
+            <h4>Useful Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">Be a Volunteer</a></li>
+                <li><a href="#">Donate Now</a></li>
+                <li><a href="#">Success Stories</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section footer-contact">
+            <h4>Keep in Touch</h4>
+            <p><strong>Office Address:</strong> KSR College, Tamil Nadu</p>
+            <p><strong>Phone:</strong> 9791366139</p>
+            <p><strong>Email:</strong> donato@gmail.com</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-section">
+            <h4>Subscribe our Newsletter</h4>
+            <div class="newsletter">
+                <input type="email" placeholder="Enter Your Email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        © 2025 All rights reserved | Designed by AI Mavericks
+    </div>
+</footer>
+<script src="donate.js"></script>
+<script>
+    function toggleOtherInput() {
+        const foodItem = document.getElementById("foodItem").value;
+        document.getElementById("otherFood").style.display = (foodItem === "Others") ? "block" : "none";
+    }
+</script>
+</body>
+</html>

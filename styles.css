@@ -1,0 +1,77 @@
+body {
+    font-family: 'Roboto', sans-serif; /* More modern font */
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 40px;
+    box-sizing: border-box; /* Ensures padding is within the body width */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+form:hover {
+    transform: translateY(-5px); /* Subtle hover effect for the form */
+}
+
+input, select, textarea {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures inputs fill form width */
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #28a745;
+    outline: none;
+    background-color: #e9f7e9; /* Light green background when focused */
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+button:active {
+    transform: scale(1); /* Button "snaps back" when clicked */
+}
+
+@media (max-width: 480px) {
+    body {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

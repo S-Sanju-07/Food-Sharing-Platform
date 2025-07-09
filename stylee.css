@@ -1,0 +1,819 @@
+/* ===================== */
+/* 🔹 Reset & General Styling */
+/* ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background-color: #f8f9fa;
+}
+
+
+/* ===================== */
+/* 🔹 Top Header */
+/* ===================== */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background: linear-gradient(to right, #007BFF, #6A11CB);
+    color: white;
+    font-size: 14px;
+}
+
+.contact-info i {
+    margin-right: 8px;
+}
+
+.social-icons i {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/* 🔹 Main Header */
+/* ===================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.trust-name h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.trust-name p {
+    font-size: 12px;
+    color: gray;
+}
+
+.main-title h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.buttons button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.donate {
+    background: #1a5777;
+    color: white;
+    border: none;
+}
+
+.location {
+    border: 2px solid #B0854F;
+    color: #B0854F;
+    background: none;
+}
+.food-sharing-banner {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.food-sharing-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: right;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.banner-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.donate-btn {
+    display: inline-block;
+    background: #ffcc00;
+    color:#1a5777;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.donate-btn:hover {
+    background: #e6b800;
+}
+
+
+/* ===================== */
+/* 🔹 Navigation Bar */
+/* ===================== */
+.nav-bar {
+   
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-bar ul li {
+    display: inline;
+}
+
+.nav-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    color: #FFDD57;
+}
+
+.nav-bar ul li i {
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* ===================== */
+/* 🔹 Banner Section */
+/* ===================== */
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.banner img {
+    width: 100%;
+    height: 490px;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: left;
+    max-width: 500px;
+}
+
+.banner-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: gold;
+}
+
+.banner-content p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.banner .donate-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #1a5777;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.banner .donate-btn:hover {
+    background: #FF5722;
+}
+
+/* ===================== */
+/* 🔹 Our Impact Section */
+/* ===================== */
+.impact-section {
+    padding: 50px;
+    background-color: white;
+    text-align: center;
+}
+
+.impact-section h2 {
+    color: #B0854F;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Small line under heading */
+.impact-section h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: gray;
+    margin: 8px auto 0;
+}
+
+/* Impact Cards Container */
+.impact-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Individual Impact Card */
+.impact-card {
+    background: white;
+    padding: 20px;
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.impact-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icons */
+.impact-card img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+/* Numbers Styling */
+.impact-card h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.blue {
+    color: #007BFF;
+}
+
+.brown {
+    color: #B0854F;
+}
+
+/* Description */
+.impact-card p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000; /* Ensures it's always on top */
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+.nav-bar {
+    position: fixed;
+    top: 108px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background:#1a5777;
+    z-index: 999;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Section Styling */
+.our-works {
+    background: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Heading */
+.works-intro h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.works-intro h2 span {
+    color: #0078d7;
+}
+
+.works-intro p {
+    color: #444;
+    margin: 10px 0 20px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background: linear-gradient(to right, rgb(34, 123, 57), Yellow);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Card Layout */
+.works-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 15px;
+    color: #0078d7;
+    font-size: 1.3rem;
+}
+
+.card h3 span {
+    color: #c89260;
+}
+
+.card p {
+    padding: 0 15px 15px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .works-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Footer General Styles */
+.footer {
+    background-color: #1a5777; /* Dark Blue */
+    color: #ffffff; /* White Text */
+    padding: 40px 0;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer Container */
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+/* Footer Logo */
+.footer-logo img {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+/* Footer Headings */
+.footer h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFCC00; /* Yellow */
+    margin-bottom: 15px;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #d1d1d1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #FFCC00; /* Yellow */
+}
+
+/* Contact Info */
+.footer-contact p {
+    margin: 5px 0;
+}
+
+/* Newsletter */
+.newsletter {
+    margin-top: 20px;
+}
+
+.newsletter input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    padding: 10px 15px;
+    border: none;
+    background: #FFCC00;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.newsletter button:hover {
+    background: #d4aa00;
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #d1d1d1;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.hero-section {
+    background: url('IMAGES/below banner.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 5%;
+    color: #fff;
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 500px;
+    z-index: 2;
+}
+
+.highlight-tag {
+    display: inline-block;
+    background: #6b2b7d;
+    color: white;
+    padding: 8px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #0056b3;
+}
+.biogas-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.biogas-content {
+    width: 50%;
+    padding: 20px;
+}
+
+.biogas-content h2 {
+    font-size: 28px;
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+.biogas-content p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.biogas-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.biogas-content ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-block;
+    text-decoration: none;
+    background: #0077b6;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.read-more:hover {
+    background: #005f8d;
+}
+
+/* Image Section */
+.biogas-images {
+    position: relative;
+    width: 50%;
+}
+
+.biogas-img-large img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.biogas-img-small {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid #ffd700;
+    border-radius: 10px;
+    background: #fff;
+    padding: 5px;
+}
+
+.biogas-img-small img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+.food-marquee {
+    background: linear-gradient(45deg,#1a5777, #bfe3d8);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 0;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0; /* Remove extra spacing */
+    border: none; /* Remove any unwanted borders */
+}
+
+.food-banner {
+    display: block;
+    width: 100%;
+    margin-bottom: -4px; /* Adjust to remove the unwanted gap */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section Styling */
+.impact-section {
+    padding: 40px 20px;
+}
+
+.impact-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Card Container */
+.impact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Impact Card Styling */
+.impact-card {
+    background: linear-gradient(135deg, #ffffff, #f3f3f3);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 40px; /* Adjust size */
+    margin-bottom: 10px;
+}
+
+/* Text Styling */
+.impact-card h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.impact-card p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Number Styling */
+.impact-card .blue {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Hover Effect */
+.impact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .impact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* Impact Card Styling */
+.impact-card {
+    background: radial-gradient(circle, #ffffff, #f3f3f3);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.impact-card:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    background: #1a5777;/* Blue Radial Gradient */
+    box-shadow: 0 6px 20px rgba(0, 91, 187, 0.4); /* Soft Glow */
+}
+.impact-card:hover h3{
+    color: white;
+}
+.impact-card:hover p{
+    color: white;
+}
+.impact-card:hover span{
+    color: white;
+}
+
+
+/* Change text and icon color on hover */
+.impact-card:hover h3,
+.impact-card:hover p,
+.impact-card:hover .icon {
+    color: #fff;
+}
+

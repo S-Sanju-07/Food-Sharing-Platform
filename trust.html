@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="IMAGES/DONATO LOGO.jpg">
+    <title>Charity Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c6dff8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #2d2d2d;
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .location {
+            font-size: 12px;
+            color: #777;
+            display: flex;
+            align-items: center;
+        }
+
+        .location i {
+            margin-right: 5px;
+        }
+
+        .view-button {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .view-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1> Children's Trust</h1>
+
+    <div class="cards-container">
+        
+        <div class="card">
+            <img src="imgs/child .jpg" alt="Charity Image">
+            <div class="card-content">
+                <h3>Annai Charitable & Educational Trust</h3>
+                <p>Founder - Venkatesh M</p>
+                <p>Since 2009</p>
+                <p class="location"><i>📍</i> Tiruchengode</p>
+                <a href="pay.html" class="view-button">donate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="imgs/child1.jpg" alt="Charity Image">
+            <div class="card-content">
+                <h3>Selva Charitable Trust</h3>
+                <p>Founder - Venkatesh M</p>
+                <p>Since 2009</p>
+                <p class="location"><i>📍</i> Tiruchengode</p>
+                <a href="pay.html" class="view-button">donate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="imgs/child2.jpg" alt="Charity Image">
+            <div class="card-content">
+                <h3>Helping Hands Foundation</h3>
+                <p>Founder - John Doe</p>
+                <p>Since 2015</p>
+                <p class="location"><i>📍</i> Chennai</p>
+                <a href="pay.html" class="view-button">donate</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="imgs/child3.jpg" alt="Charity Image">
+            <div class="card-content">
+                <h3>Thaimai trust</h3>
+                <p>Founder - John Doe</p>
+                <p>Since 2017</p>
+                <p class="location"><i>📍</i> Chennai</p>
+                <a href="pay.html" class="view-button">donate</a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="imgs/child4.jpg" alt="Charity Image">
+            <div class="card-content">
+                <h3>The Sevashram Trust</h3>
+                <p>Founder - John joe</p>
+                <p>Since 2015</p>
+                <p class="location"><i>📍</i> salem</p>
+                <a href="pay.html" class="view-button">donate</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="imgs/child5.jpg" alt="Charity Image">
+            <div class="card-content">
+                <h3>Sunshine Welfare Society</h3>
+                <p>Founder - Jane Smith</p>
+                <p>Since 2012</p>
+                <p class="location"><i>📍</i> Coimbatore</p>
+                <a href="pay.html" class="view-button">donate</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
